@@ -1,5 +1,16 @@
 apply plugin: 'com.android.application'
 
+project.ext.react = [
+    // whether to bundle JS and assets in debug mode
+    bundleInDebug: true,
+    // whether to bundle JS and assets in release mode
+    bundleInRelease: true,
+    // the root of your RN project, i.e. where "package.json" lives
+    root: "../../"
+]
+
+apply from:"../../node_modules/react-native/react.gradle"
+
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
@@ -61,12 +72,12 @@ gradle.projectsEvaluated {
     //
 
     def plistParser = new XmlSlurper(
-            /* validating */ false,
-            /* namespaceAware */ false,
-            /* allowDocTypeDeclaration */ true)
+        /* validating */ false,
+        /* namespaceAware */ false,
+        /* allowDocTypeDeclaration */ true)
     plistParser.setFeature(
-            'http://apache.org/xml/features/nonvalidating/load-external-dtd',
-            false)
+        'http://apache.org/xml/features/nonvalidating/load-external-dtd',
+        false)
     def plist = plistParser.parse('../ios/app/src/Info.plist')
     def dropboxScheme = plist.dict.array.dict.array.string.find { string ->
         string.text().startsWith('db-')
@@ -107,7 +118,6 @@ gradle.projectsEvaluated {
         }
     }
 }
-
 if (project.file('google-services.json').exists()) {
-   apply plugin: 'com.google.gms.google-services'
+    apply plugin: 'com.google.gms.google-services'
 }
