@@ -75,7 +75,7 @@
     "react-native-sound": "0.10.9",
     "react-native-swipeout": "2.3.6",
     "react-native-vector-icons": "6.0.2",
-    "react-native-webrtc": "git+ssh://tfs.solaborate.com:22/Solaborate/Solaborate/_git/Solaborate.HELLO.react-native-webrtc#efb48e0d5b67f9cb9432c63e985217db2474a682",
+    "react-native-webrtc": "github:solaborate/react-native-webrtc#772821829c45cb81b2ca4bb10090568f39af4b50",
     "react-redux": "5.0.7",
     "react-transition-group": "2.4.0",
     "redux": "4.0.0",
