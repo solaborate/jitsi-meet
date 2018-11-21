@@ -19,7 +19,7 @@ import {
 import { getActiveSession } from '../../functions';
 
 import StartRecordingDialog from './StartRecordingDialog';
-import StopRecordingDialog from './StopRecordingDialog';
+import { StopRecordingDialog } from './_';
 
 /**
  * The type of the React {@code Component} props of
@@ -107,6 +107,7 @@ export default class AbstractRecordButton<P: Props>
  * @private
  * @returns {{
  *     _isRecordingRunning: boolean,
+ *     disabledByFeatures: boolean,
  *     visible: boolean
  * }}
  */

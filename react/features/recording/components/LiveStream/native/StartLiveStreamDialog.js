@@ -4,14 +4,15 @@ import React from 'react';
 import { View } from 'react-native';
 import { connect } from 'react-redux';
 
-import { translate } from '../../../base/i18n';
-import { googleApi } from '../../../google-api';
+import { translate } from '../../../../base/i18n';
+import { googleApi } from '../../../../google-api';
 
 
-import { setLiveStreamKey } from '../../actions';
+import { setLiveStreamKey } from '../../../actions';
 
 import AbstractStartLiveStreamDialog,
-{ _mapStateToProps, type Props } from './AbstractStartLiveStreamDialog';
+{ _mapStateToProps, type Props } from '../AbstractStartLiveStreamDialog';
+
 import GoogleSigninForm from './GoogleSigninForm';
 import StreamKeyForm from './StreamKeyForm';
 import StreamKeyPicker from './StreamKeyPicker';
@@ -47,7 +48,7 @@ class StartLiveStreamDialog extends AbstractStartLiveStreamDialog<Props> {
      *
      * FIXME: This is a temporary method to store the streaming key on mobile
      * for easier use, until the Google sign-in is implemented. We don't store
-     * the key on web for security reasons (e.g. we don't want to have the key
+     * the key on web for security reasons (e.g. We don't want to have the key
      * stored if the used signed out).
      *
      * @private
@@ -80,7 +81,7 @@ class StartLiveStreamDialog extends AbstractStartLiveStreamDialog<Props> {
      * A callback to be invoked when an authenticated user changes, so
      * then we can get (or clear) the YouTube stream key.
      *
-     * TODO: handle errors by showing some indication to the user.
+     * TODO: Handle errors by showing some indication to the user.
      *
      * @private
      * @param {Object} response - The retreived signin response.
